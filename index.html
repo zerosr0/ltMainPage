@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="title">QMS MY JOB 현황</div>
+    <section class="board">
+      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span></p>
+      <div class="wrapper">
+        <table>
+          <caption class="hidden">미처리문서</caption>
+          <tr>
+            <td class="issue-type">오픈이슈</td>
+            <td class="issue-title">이슈제목</td>
+            <td class="current-status">문제점승인</td>
+            <td class="write-date">23.07.05 운영자</td>
+          </tr>
+          <tr>
+            <td class="issue-type">오픈이슈</td>
+            <td class="issue-title">이슈제목</td>
+            <td class="current-status">문제점승인</td>
+            <td class="write-date">23.07.04 운영자</td>
+          </tr>
+          <tr>
+            <td class="issue-type">오픈이슈</td>
+            <td class="issue-title">[테스트 프로젝트_8]문서 설계 사...</td>
+            <td class="current-status">실적문서승인</td>
+            <td class="write-date">23.07.03 운영자</td>
+          </tr>
+          <tr>
+            <td class="issue-type">오픈이슈</td>
+            <td class="issue-title">[테스트 프로젝트_7]문서 설계 사...</td>
+            <td class="current-status">처리결과확인</td>
+            <td class="write-date">23.07.03 운영자</td>
+          </tr>
+          <tr>
+            <td class="issue-type">오픈이슈</td>
+            <td class="issue-title">[테스트 프로젝트_6]문서 설계 사...</td>
+            <td class="current-status">처리결과확인</td>
+            <td class="write-date">23.06.30 운영자</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="icon">
+      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>업무별 미처리문서</span></p>
+      <div class="wrapper">
+        <article><img src="image/" alt="">프로젝트</article>
+        <article>문서관리</article>
+        <article>도면관리</article>
+        <article>변경관리</article>
+        <article>과거품질</article>
+        <article>당월이슈</article>
+        <article>당월조치</article>
+        <article>출하품질</article>
+        <article>심사관리</article>
+      </div>
+    </section>
+    <section class="projectTable">
+      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>My Project</span></p>
+      <div class="wrapper"></div>
+    </section>
+    <section class="cuurentGraph">
+      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span></p>
+      <div class="wrapper">
+        <figure class="highcharts-figure">
+          <div id="parent_container">
+
+            <input id="play-range" type="range" value="2302" min="2302" max="2307" />
+
+            <div id="donut-container"></div>
+          </div>
+        </figure>
+      </div>
+    </section>
+    <section class="issueGraph">
+      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>Open Issue</span></p>
+      <div class="wrapper">
+        <figure class="highcharts-figure">
+          <div id="container"></div>
+        </figure>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
