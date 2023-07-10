@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Noto Sans KR", sans-serif;
 }
 ol,
 ul,
@@ -10,6 +13,7 @@ li {
 }
 a {
 	text-decoration: none;
+	color: #000;
 }
 .hidden {
 	position: absolute;
@@ -18,11 +22,17 @@ a {
 }
 table {
 	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .frame {
 	width: 100%;
 	height: 100%;
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
 	.title {
 		width: 100%;
 		height: 50px;
@@ -37,32 +47,12 @@ table {
 		height: 400px;
 		margin: 10px;
 		padding: 10px;
-
-		&:nth-of-type(1) {
-			width: calc(40% - 60px);
-		}
-		&:nth-of-type(2) {
-			width: 30%;
-			article {
-				float: left;
-				width: 30%;
-				height: 100px;
-			}
-		}
-		&:nth-of-type(3) {
-			width: 30%;
-		}
-		&:nth-of-type(4) {
-			width: 60%;
-		}
-		&:nth-of-type(5) {
-			width: 40%;
-		}
-		.sectionTitle {
+		.section-title {
 			display: flex;
 			align-items: center;
+			margin-bottom: 10px;
 			img {
-				width: 30px;
+				width: 25px;
 				margin-right: 10px;
 			}
 		}
@@ -75,37 +65,143 @@ table {
 	}
 }
 
-//table
-.board {
-	.wrapper {
-		table {
-			width: 100%;
+.container {
+	&:nth-of-type(1) {
+		margin-bottom: 20px;
+	}
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+	.board {
+		width: calc(40% - 60px);
+		.wrapper {
+			table {
+				width: 100%;
+				height: 100%;
+				tbody {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-around;
+					tr {
+						display: flex;
+						flex: 1;
+						align-items: center;
+						width: 95%;
+						border-bottom: 1px solid #a9adb8;
+						&:last-of-type {
+							margin-bottom: 10px;
+						}
+						&:hover {
+							background-color: #f2f3f6;
+						}
+						.issue-type {
+							color: #2aab7d;
+							flex: 1;
+							padding-left: 8px;
+						}
+						.issue-title {
+							flex: 2;
+						}
+						.current-status {
+							color: #e07351;
+							flex: 1;
+						}
+						.write-date {
+							flex: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	.icons {
+		width: 25%;
+		.wrapper {
+			height: 100%;
+			border: none !important;
 			display: flex;
-			flex-direction: column;
-			align-items: center;
-			tr {
-				flex: 1;
-				display: flex;
-				padding: 10px;
-				border-bottom: 1px solid #a9adb8;
-				.issue-type {
-					color: #2aab7d;
-					flex: 1;
+			flex-wrap: wrap;
+			article {
+				width: 32%;
+				border: 1px solid #000;
+				border-radius: 9px;
+				text-align: center;
+				margin-right: 2%;
+				margin-bottom: 2%;
+				&:nth-of-type(3n) {
+					margin-right: 0;
 				}
-				.issue-title {
-					flex: 2;
+				&:nth-of-type(7),
+				&:nth-of-type(8),
+				&:nth-of-type(9) {
+					margin-bottom: 0;
 				}
-				.current-status {
-					color: #e07351;
-					flex: 1;
+				span {
+					display: block;
+					margin: 15px auto;
 				}
-				.write-date {
-					flex: 1;
+				.icons-value {
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					img {
+						width: 35px;
+					}
+					b {
+						font-size: 25px;
+						color: #5978b9;
+						&.monthly-issue {
+							color: #f46161;
+						}
+					}
+				}
+			}
+		}
+	}
+	.project-table {
+		width: 35%;
+		.wrapper {
+			border: none !important;
+			table {
+				width: 100%;
+				border-radius: 10px;
+				box-shadow: 0 0 0 1px #000;
+				tbody {
+					tr {
+						border-bottom: 1px solid #000;
+						&:last-child {
+							border-bottom: none;
+						}
+						th,
+						td {
+							border-right: 1px solid #000;
+							height: 75px;
+							border-radius: 10px 10px 0 0;
+							&:last-child {
+								border-right: none;
+							}
+						}
+						th {
+							background-color: #f2f3f6;
+						}
+					}
 				}
 			}
 		}
 	}
 }
+.current-graph {
+	width: 57%;
+}
+.issue-graph {
+	width: 40%;
+}
+
 //프로젝트 진행현황
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
@@ -113,16 +209,9 @@ table {
 	margin: 0;
 }
 
-#donut-container {
-	height: 600px;
-	width: 500px;
+#donut_container {
+	width: 50%;
 	margin: 0 auto;
-}
-
-#play-range {
-	transform: translateY(2.5px);
-	width: calc(100%);
-	background: #f8f8f8;
 }
 
 //open issue

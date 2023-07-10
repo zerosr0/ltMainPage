@@ -16,83 +16,156 @@
 <body>
   <div class="frame">
     <div class="title">QMS MY JOB 현황</div>
-    <section class="board">
-      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span></p>
-      <div class="wrapper">
-        <table>
-          <caption class="hidden">미처리문서</caption>
-          <tr>
-            <td class="issue-type">오픈이슈</td>
-            <td class="issue-title">이슈제목</td>
-            <td class="current-status">문제점승인</td>
-            <td class="write-date">23.07.05 운영자</td>
-          </tr>
-          <tr>
-            <td class="issue-type">오픈이슈</td>
-            <td class="issue-title">이슈제목</td>
-            <td class="current-status">문제점승인</td>
-            <td class="write-date">23.07.04 운영자</td>
-          </tr>
-          <tr>
-            <td class="issue-type">오픈이슈</td>
-            <td class="issue-title">[테스트 프로젝트_8]문서 설계 사...</td>
-            <td class="current-status">실적문서승인</td>
-            <td class="write-date">23.07.03 운영자</td>
-          </tr>
-          <tr>
-            <td class="issue-type">오픈이슈</td>
-            <td class="issue-title">[테스트 프로젝트_7]문서 설계 사...</td>
-            <td class="current-status">처리결과확인</td>
-            <td class="write-date">23.07.03 운영자</td>
-          </tr>
-          <tr>
-            <td class="issue-type">오픈이슈</td>
-            <td class="issue-title">[테스트 프로젝트_6]문서 설계 사...</td>
-            <td class="current-status">처리결과확인</td>
-            <td class="write-date">23.06.30 운영자</td>
-          </tr>
-        </table>
-      </div>
-    </section>
-    <section class="icon">
-      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>업무별 미처리문서</span></p>
-      <div class="wrapper">
-        <article><img src="image/" alt="">프로젝트</article>
-        <article>문서관리</article>
-        <article>도면관리</article>
-        <article>변경관리</article>
-        <article>과거품질</article>
-        <article>당월이슈</article>
-        <article>당월조치</article>
-        <article>출하품질</article>
-        <article>심사관리</article>
-      </div>
-    </section>
-    <section class="projectTable">
-      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>My Project</span></p>
-      <div class="wrapper"></div>
-    </section>
-    <section class="cuurentGraph">
-      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span></p>
-      <div class="wrapper">
-        <figure class="highcharts-figure">
-          <div id="parent_container">
-
-            <input id="play-range" type="range" value="2302" min="2302" max="2307" />
-
-            <div id="donut-container"></div>
-          </div>
-        </figure>
-      </div>
-    </section>
-    <section class="issueGraph">
-      <p class="sectionTitle"><img src="image/sectionTitle.png" alt=""><span>Open Issue</span></p>
-      <div class="wrapper">
-        <figure class="highcharts-figure">
-          <div id="container"></div>
-        </figure>
-      </div>
-    </section>
+    <div class="container">
+      <section class="board">
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span></p>
+        <div class="wrapper">
+          <table>
+            <caption class="hidden">미처리문서</caption>
+            <tbody>
+              <tr>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">이슈제목</a></td>
+                <td class="current-status">문제점승인</td>
+                <td class="write-date">23.07.05 운영자</td>
+              </tr>
+              <tr>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">이슈제목</a></td>
+                <td class="current-status">문제점승인</td>
+                <td class="write-date">23.07.04 운영자</td>
+              </tr>
+              <tr>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_8] 문서 설계 사...</a></td>
+                <td class="current-status">실적문서승인</td>
+                <td class="write-date">23.07.03 운영자</td>
+              </tr>
+              <tr>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_7] 문서 설계 사...</a></td>
+                <td class="current-status">처리결과확인</td>
+                <td class="write-date">23.07.03 운영자</td>
+              </tr>
+              <tr>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_6] 문서 설계 사...</a></td>
+                <td class="current-status">처리결과확인</td>
+                <td class="write-date">23.06.30 운영자</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="icons">
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>업무별 미처리문서</span></p>
+        <div class="wrapper">
+          <article><span>프로젝트</span>
+            <div class="icons-value"><img src="image/프로젝트.png" alt=""><b>22</b></div>
+          </article>
+          <article><span>문서관리</span>
+            <div class="icons-value"><img src="image/문서관리.png" alt=""><b>57%</b></div>
+          </article>
+          <article><span>도면관리</span>
+            <div class="icons-value"><img src="image/도면관리.png" alt=""><b>11</b></div>
+          </article>
+          <article><span>변경관리</span>
+            <div class="icons-value"><img src="image/변경관리.png" alt=""><b>6</b>
+            </div>
+          </article>
+          <article><span>과거품질</span>
+            <div class="icons-value"><img src="image/과거품질.png" alt=""><b>0</b></div>
+          </article>
+          <article><span>당월이슈</span>
+            <div class="icons-value"><img src="image/당월이슈.png" alt=""><b class="monthly-issue">7</b></div>
+          </article>
+          <article><span>당월조치</span>
+            <div class="icons-value"><img src="image/당월조치.png" alt=""><b>3/7</b></div>
+          </article>
+          <article><span>출하품질</span>
+            <div class="icons-value"><img src="image/출하품질.png" alt=""><b>0</b></div>
+          </article>
+          <article><span>심사관리</span>
+            <div class="icons-value"><img src="image/심사관리.png" alt=""><b>0</b></div>
+          </article>
+        </div>
+      </section>
+      <section class="project-table">
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><b>My Project</b></p>
+        <div class="wrapper">
+          <table>
+            <caption class="hidden">My Project</caption>
+            <tbody>
+              <tr>
+                <th colspan="1">상태</th>
+                <th colspan="1">프로젝트명</th>
+                <th colspan="1">진행상태</th>
+                <th colspan="1">시작일<br />(실제)</th>
+                <th colspan="1">종료일<br />(실제)</th>
+                <th colspan="1">대분류</th>
+                <th colspan="1">진척율</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section class="current-graph">
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span></p>
+        <div class="wrapper">
+          <figure class="highcharts-figure">
+            <div id="parent_container">
+              <div id="donut_container"></div>
+            </div>
+          </figure>
+        </div>
+      </section>
+      <section class="issue-graph">
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>Open Issue</span></p>
+        <div class="wrapper">
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+          </figure>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 

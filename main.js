@@ -2,15 +2,14 @@
 
 const startYear = 2302,
   endYear = 2307,
-  input = document.getElementById('play-range'),
   nbr = 6;
 
 let dataset, chart;
 
-function getData(year) {
+function getData(month) {
   const output = Object.entries(dataset).map(country => {
     const [countryName, countryData] = country;
-    return [countryName, Number(countryData[year])];
+    return [countryName, Number(countryData[month])];
   });
   return [output[0], output.slice(1, nbr)];
 }
@@ -27,7 +26,7 @@ function getSubtitle() {
     'data/data.json'
   ).then(response => response.json());
 
-  chart = Highcharts.chart('donut-container', {
+  chart = Highcharts.chart('donut_container', {
     title: {
       text: '전체 진행 현황',
       align: 'left'
@@ -82,43 +81,6 @@ function getSubtitle() {
   });
 })();
 
-
-/*
- * Update the chart. This happens either on updating (moving) the range input,
- * or from a timer when the timeline is playing.
- */
-function update(increment) {
-  if (increment) {
-    input.value = parseInt(input.value, 10) + increment;
-  }
-  if (input.value >= endYear) {
-    // Auto-pause
-    pause(btn);
-  }
-
-  chart.update(
-    {
-      subtitle: {
-        text: getSubtitle()
-      }
-    },
-    false,
-    false,
-    false
-  );
-
-  chart.series[0].update({
-    name: input.value,
-    data: getData(input.value)[1]
-  });
-}
-
-/*
- * Trigger the update on the range bar click.
- */
-input.addEventListener('input', function () {
-  update();
-});
 
 
 
