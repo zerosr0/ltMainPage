@@ -1,5 +1,5 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +14,9 @@ li {
 }
 
 a {
-  text-decoration: none;
-  color: #000;
+  /* 라이브러리 import로 속성이 우선적용되지 않아 important 부여 */
+  text-decoration: none !important;
+  color: #000 !important;
 }
 
 .hidden {
@@ -50,7 +51,6 @@ table {
 .frame section {
   float: left;
   height: 400px;
-  margin: 10px;
   padding: 10px;
 }
 .frame section .section-title {
@@ -64,27 +64,27 @@ table {
 }
 .frame section .wrapper {
   width: 100%;
-  height: 100%;
+  height: 90%;
   border: 1px solid #000;
   border-radius: 10px;
 }
 
-.container:nth-of-type(1) {
+.section-container:nth-of-type(1) {
   margin-bottom: 20px;
 }
-.container::after {
+.section-container::after {
   display: block;
   content: "";
   clear: both;
 }
-.container .board {
-  width: calc(40% - 60px);
+.section-container .board {
+  width: 35%;
 }
-.container .board .wrapper table {
+.section-container .board .wrapper table {
   width: 100%;
   height: 100%;
 }
-.container .board .wrapper table tbody {
+.section-container .board .wrapper table tbody {
   width: 100%;
   height: 100%;
   display: flex;
@@ -92,44 +92,43 @@ table {
   align-items: center;
   justify-content: space-around;
 }
-.container .board .wrapper table tbody tr {
+.section-container .board .wrapper table tbody tr {
   display: flex;
   flex: 1;
   align-items: center;
   width: 95%;
   border-bottom: 1px solid #a9adb8;
 }
-.container .board .wrapper table tbody tr:last-of-type {
+.section-container .board .wrapper table tbody tr:last-of-type {
   margin-bottom: 10px;
 }
-.container .board .wrapper table tbody tr:hover {
+.section-container .board .wrapper table tbody tr:hover {
   background-color: #f2f3f6;
 }
-.container .board .wrapper table tbody tr .issue-type {
+.section-container .board .wrapper table tbody tr .issue-type {
   color: #2aab7d;
   flex: 1;
   padding-left: 8px;
 }
-.container .board .wrapper table tbody tr .issue-title {
+.section-container .board .wrapper table tbody tr .issue-title {
   flex: 2;
 }
-.container .board .wrapper table tbody tr .current-status {
+.section-container .board .wrapper table tbody tr .current-status {
   color: #e07351;
   flex: 1;
 }
-.container .board .wrapper table tbody tr .write-date {
+.section-container .board .wrapper table tbody tr .write-date {
   flex: 1;
 }
-.container .icons {
+.section-container .icons {
   width: 25%;
 }
-.container .icons .wrapper {
-  height: 100%;
+.section-container .icons .wrapper {
   border: none !important;
   display: flex;
   flex-wrap: wrap;
 }
-.container .icons .wrapper article {
+.section-container .icons .wrapper article {
   width: 32%;
   border: 1px solid #000;
   border-radius: 9px;
@@ -137,103 +136,175 @@ table {
   margin-right: 2%;
   margin-bottom: 2%;
 }
-.container .icons .wrapper article:nth-of-type(3n) {
+.section-container .icons .wrapper article:nth-of-type(3n) {
   margin-right: 0;
 }
-.container .icons .wrapper article:nth-of-type(7), .container .icons .wrapper article:nth-of-type(8), .container .icons .wrapper article:nth-of-type(9) {
+.section-container .icons .wrapper article:nth-of-type(7), .section-container .icons .wrapper article:nth-of-type(8), .section-container .icons .wrapper article:nth-of-type(9) {
   margin-bottom: 0;
 }
-.container .icons .wrapper article span {
+.section-container .icons .wrapper article span {
   display: block;
   margin: 15px auto;
 }
-.container .icons .wrapper article .icons-value {
+.section-container .icons .wrapper article .icons-value {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.container .icons .wrapper article .icons-value img {
+.section-container .icons .wrapper article .icons-value img {
   width: 35px;
 }
-.container .icons .wrapper article .icons-value b {
+.section-container .icons .wrapper article .icons-value b {
   font-size: 25px;
   color: #5978b9;
 }
-.container .icons .wrapper article .icons-value b.monthly-issue {
+.section-container .icons .wrapper article .icons-value b.monthly-issue {
   color: #f46161;
 }
-.container .project-table {
-  width: 35%;
+.section-container .project-table {
+  width: 40%;
+  text-align: center;
 }
-.container .project-table .wrapper {
+.section-container .project-table .wrapper {
   border: none !important;
 }
-.container .project-table .wrapper table {
+.section-container .project-table .wrapper table {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 0 0 1px #000;
 }
-.container .project-table .wrapper table tbody tr {
+.section-container .project-table .wrapper table tbody tr {
   border-bottom: 1px solid #000;
 }
-.container .project-table .wrapper table tbody tr:last-child {
+.section-container .project-table .wrapper table tbody tr:last-child {
   border-bottom: none;
 }
-.container .project-table .wrapper table tbody tr th,
-.container .project-table .wrapper table tbody tr td {
+.section-container .project-table .wrapper table tbody tr th,
+.section-container .project-table .wrapper table tbody tr td {
   border-right: 1px solid #000;
-  height: 75px;
+  height: 68px;
   border-radius: 10px 10px 0 0;
 }
-.container .project-table .wrapper table tbody tr th:last-child,
-.container .project-table .wrapper table tbody tr td:last-child {
+.section-container .project-table .wrapper table tbody tr th:last-child,
+.section-container .project-table .wrapper table tbody tr td:last-child {
   border-right: none;
 }
-.container .project-table .wrapper table tbody tr th {
+.section-container .project-table .wrapper table tbody tr th {
   background-color: #f2f3f6;
 }
 
 .current-graph {
-  width: 57%;
+  width: 60%;
+}
+.current-graph .wrapper {
+  height: 100% !important;
+}
+.current-graph .wrapper .dropdown {
+  width: 100%;
+  float: left;
+  text-align: right;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+.current-graph .wrapper .dropdown .btn {
+  background-color: #ced5ed;
+  border: none;
+  color: #000;
+}
+.current-graph .wrapper .highcharts-figure {
+  width: 50%;
+  float: left;
+}
+.current-graph .wrapper .highcharts-figure .current-graph-title img {
+  width: 30px;
+  margin: 0 10px;
+}
+.current-graph .wrapper .highcharts-figure #parent_container {
+  width: 100%;
+  height: 50%;
+}
+.current-graph .wrapper .highcharts-figure #parent_container #donut_container {
+  width: 100%;
+}
+.current-graph .wrapper .highcharts-figure #parent_container #donut_container .highcharts-root {
+  height: 75%;
+}
+.current-graph .wrapper .customers-current-graph {
+  width: 50%;
+  float: right;
+}
+.current-graph .wrapper .customers-current-graph .customers-current-title img {
+  width: 30px;
+  margin: 0 10px;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph {
+  position: relative;
+  width: 90%;
+  height: 20px;
+  margin: 30px auto;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph div {
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp1 {
+  width: 37%;
+  background-color: #5157e0;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp2 {
+  width: 26%;
+  background-color: #2ccb92;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp3 {
+  width: 21%;
+  background-color: #f2c94c;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp4 {
+  width: 11%;
+  background-color: #b8b6b6;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp5 {
+  width: 5%;
+  background-color: #e07351;
 }
 
 .issue-graph {
   width: 40%;
+  height: 100% !important;
 }
-
-.highcharts-figure {
-  margin: 0;
+.issue-graph .highcharts-root {
+  border-radius: 10px;
 }
-
-#donut_container {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.highcharts-data-table caption {
+.issue-graph .highcharts-data-table caption {
   padding: 1em 0;
   font-size: 1.2em;
   color: #555;
 }
-
-.highcharts-data-table th {
+.issue-graph .highcharts-data-table th {
   font-weight: 600;
   padding: 0.5em;
 }
-
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
+.issue-graph .highcharts-data-table td,
+.issue-graph .highcharts-data-table th,
+.issue-graph .highcharts-data-table caption {
   padding: 0.5em;
 }
-
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
+.issue-graph .highcharts-data-table thead tr,
+.issue-graph .highcharts-data-table tr:nth-child(even) {
   background: #f8f8f8;
 }
-
-.highcharts-data-table tr:hover {
+.issue-graph .highcharts-data-table .highcharts-data-table tr:hover {
   background: #f1f7ff;
+}
+.issue-graph .highcharts-plot-background {
+  fill: #f2f3f6;
+}
+.issue-graph .highcharts-series path {
+  fill: #bcacfc;
+}
+.issue-graph .highcharts-series path:hover {
+  fill: #cdc1f9;
 }
 
 /*# sourceMappingURL=style.css.map */

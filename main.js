@@ -27,10 +27,7 @@ function getSubtitle() {
   ).then(response => response.json());
 
   chart = Highcharts.chart('donut_container', {
-    title: {
-      text: '전체 진행 현황',
-      align: 'left'
-    },
+    title: false,
     credits: {
       enabled: false
     },
@@ -39,7 +36,7 @@ function getSubtitle() {
       text: getSubtitle(),
       floating: true,
       verticalAlign: 'middle',
-      y: 30
+      y: -35
     },
 
     legend: {
@@ -47,8 +44,7 @@ function getSubtitle() {
     },
 
     tooltip: {
-      valueDecimals: 2,
-      valueSuffix: ' TWh'
+      valueSuffix: ' 건'
     },
 
     plotOptions: {
@@ -98,10 +94,12 @@ Highcharts.chart('container', {
   },
   xAxis: {
     categories: ['23-02', '23-03', '23-04', '23-05', '23-06', '23-07'],
-    crosshair: true,
     accessibility: {
       description: 'months'
     }
+  },
+  yAxis: {
+    title: false,
   },
   plotOptions: {
     column: {

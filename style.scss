@@ -12,8 +12,9 @@ li {
 	list-style: none;
 }
 a {
-	text-decoration: none;
-	color: #000;
+	/* 라이브러리 import로 속성이 우선적용되지 않아 important 부여 */
+	text-decoration: none !important;
+	color: #000 !important;
 }
 .hidden {
 	position: absolute;
@@ -45,7 +46,6 @@ table {
 	section {
 		float: left;
 		height: 400px;
-		margin: 10px;
 		padding: 10px;
 		.section-title {
 			display: flex;
@@ -58,14 +58,14 @@ table {
 		}
 		.wrapper {
 			width: 100%;
-			height: 100%;
+			height: 90%;
 			border: 1px solid #000;
 			border-radius: 10px;
 		}
 	}
 }
 
-.container {
+.section-container {
 	&:nth-of-type(1) {
 		margin-bottom: 20px;
 	}
@@ -75,7 +75,7 @@ table {
 		clear: both;
 	}
 	.board {
-		width: calc(40% - 60px);
+		width: 35%;
 		.wrapper {
 			table {
 				width: 100%;
@@ -122,7 +122,6 @@ table {
 	.icons {
 		width: 25%;
 		.wrapper {
-			height: 100%;
 			border: none !important;
 			display: flex;
 			flex-wrap: wrap;
@@ -164,7 +163,8 @@ table {
 		}
 	}
 	.project-table {
-		width: 35%;
+		width: 40%;
+		text-align: center;
 		.wrapper {
 			border: none !important;
 			table {
@@ -180,7 +180,7 @@ table {
 						th,
 						td {
 							border-right: 1px solid #000;
-							height: 75px;
+							height: 68px;
 							border-radius: 10px 10px 0 0;
 							&:last-child {
 								border-right: none;
@@ -195,48 +195,125 @@ table {
 		}
 	}
 }
-.current-graph {
-	width: 57%;
-}
-.issue-graph {
-	width: 40%;
-}
 
 //프로젝트 진행현황
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
-
-.highcharts-figure {
-	margin: 0;
-}
-
-#donut_container {
-	width: 50%;
-	margin: 0 auto;
+.current-graph {
+	width: 60%;
+	.wrapper {
+		height: 100% !important;
+		.dropdown {
+			width: 100%;
+			float: left;
+			text-align: right;
+			margin-top: 10px;
+			padding-right: 10px;
+			.btn {
+				background-color: #ced5ed;
+				border: none;
+				color: #000;
+			}
+		}
+		.highcharts-figure {
+			width: 50%;
+			float: left;
+			.current-graph-title {
+				img {
+					width: 30px;
+					margin: 0 10px;
+				}
+			}
+			#parent_container {
+				width: 100%;
+				height: 50%;
+				#donut_container {
+					width: 100%;
+					.highcharts-root {
+						height: 75%;
+					}
+				}
+			}
+		}
+		.customers-current-graph {
+			width: 50%;
+			float: right;
+			.customers-current-title {
+				img {
+					width: 30px;
+					margin: 0 10px;
+				}
+			}
+			.bar-graph {
+				position: relative;
+				width: 90%;
+				height: 20px;
+				margin: 30px auto;
+				div {
+					height: 100%;
+					border-radius: 25px;
+					float: left;
+				}
+				.corp1 {
+					width: 37%;
+					background-color: #5157e0;
+				}
+				.corp2 {
+					width: 26%;
+					background-color: #2ccb92;
+				}
+				.corp3 {
+					width: 21%;
+					background-color: #f2c94c;
+				}
+				.corp4 {
+					width: 11%;
+					background-color: #b8b6b6;
+				}
+				.corp5 {
+					width: 5%;
+					background-color: #e07351;
+				}
+			}
+		}
+	}
 }
 
 //open issue
-.highcharts-data-table caption {
-	padding: 1em 0;
-	font-size: 1.2em;
-	color: #555;
-}
-
-.highcharts-data-table th {
-	font-weight: 600;
-	padding: 0.5em;
-}
-
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-	padding: 0.5em;
-}
-
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-	background: #f8f8f8;
-}
-
-.highcharts-data-table tr:hover {
-	background: #f1f7ff;
+.issue-graph {
+	width: 40%;
+	height: 100% !important;
+	.highcharts-root {
+		border-radius: 10px;
+	}
+	.highcharts-data-table {
+		caption {
+			padding: 1em 0;
+			font-size: 1.2em;
+			color: #555;
+		}
+		th {
+			font-weight: 600;
+			padding: 0.5em;
+		}
+		td,
+		th,
+		caption {
+			padding: 0.5em;
+		}
+		thead tr,
+		tr:nth-child(even) {
+			background: #f8f8f8;
+		}
+		.highcharts-data-table tr:hover {
+			background: #f1f7ff;
+		}
+	}
+	.highcharts-plot-background {
+		fill: #f2f3f6;
+	}
+	.highcharts-series path {
+		fill: #bcacfc;
+		&:hover {
+			fill: #cdc1f9;
+		}
+	}
 }
