@@ -32,7 +32,7 @@ table {
 
 .frame {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .frame::after {
   display: block;
@@ -197,19 +197,22 @@ table {
   width: 60%;
 }
 .current-graph .wrapper {
-  height: 100% !important;
+  height: 110% !important;
 }
 .current-graph .wrapper .dropdown {
   width: 100%;
   float: left;
   text-align: right;
   margin-top: 10px;
-  padding-right: 10px;
+  padding-right: 20px;
 }
-.current-graph .wrapper .dropdown .btn {
+.current-graph .wrapper .dropdown select {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
   background-color: #ced5ed;
   border: none;
-  color: #000;
+  padding-left: 10px;
 }
 .current-graph .wrapper .highcharts-figure {
   width: 50%;
@@ -225,9 +228,7 @@ table {
 }
 .current-graph .wrapper .highcharts-figure #parent_container #donut_container {
   width: 100%;
-}
-.current-graph .wrapper .highcharts-figure #parent_container #donut_container .highcharts-root {
-  height: 75%;
+  height: 340px;
 }
 .current-graph .wrapper .customers-current-graph {
   width: 50%;
@@ -239,9 +240,9 @@ table {
 }
 .current-graph .wrapper .customers-current-graph .bar-graph {
   position: relative;
-  width: 90%;
+  width: 95%;
   height: 20px;
-  margin: 30px auto;
+  margin: 40px auto 50px 0;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph div {
   height: 100%;
@@ -268,43 +269,102 @@ table {
   width: 5%;
   background-color: #e07351;
 }
+.current-graph .wrapper .customers-current-graph .graph-desc {
+  width: 95%;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc > div {
+  display: flex;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div {
+  position: relative;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div span {
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp1 {
+  background-color: #5157e0;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp2 {
+  background-color: #2ccb92;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp3 {
+  background-color: #f2c94c;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp4 {
+  background-color: #b8b6b6;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp5 {
+  background-color: #e07351;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div p {
+  margin-right: 20px;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div b {
+  position: absolute;
+  right: 0;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp1-point {
+  color: #5157e0;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp2-point {
+  color: #2ccb92;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp3-point {
+  color: #f2c94c;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp4-point {
+  color: #b8b6b6;
+}
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp5-point {
+  color: #e07351;
+}
 
 .issue-graph {
   width: 40%;
-  height: 100% !important;
 }
-.issue-graph .highcharts-root {
+.issue-graph .wrapper {
+  height: 110% !important;
+}
+.issue-graph .wrapper .highcharts-figure .highcharts-root {
   border-radius: 10px;
 }
-.issue-graph .highcharts-data-table caption {
+.issue-graph .wrapper .highcharts-figure .highcharts-root .highcharts-plot-background {
+  fill: #f2f3f6;
+}
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
   padding: 1em 0;
   font-size: 1.2em;
   color: #555;
 }
-.issue-graph .highcharts-data-table th {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table th {
   font-weight: 600;
   padding: 0.5em;
 }
-.issue-graph .highcharts-data-table td,
-.issue-graph .highcharts-data-table th,
-.issue-graph .highcharts-data-table caption {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table td,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table th,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
   padding: 0.5em;
 }
-.issue-graph .highcharts-data-table thead tr,
-.issue-graph .highcharts-data-table tr:nth-child(even) {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table thead tr,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table tr:nth-child(even) {
   background: #f8f8f8;
 }
-.issue-graph .highcharts-data-table .highcharts-data-table tr:hover {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }
-.issue-graph .highcharts-plot-background {
-  fill: #f2f3f6;
-}
-.issue-graph .highcharts-series path {
+.issue-graph .wrapper .highcharts-figure .highcharts-series path {
   fill: #bcacfc;
 }
-.issue-graph .highcharts-series path:hover {
+.issue-graph .wrapper .highcharts-figure .highcharts-series path:hover {
   fill: #cdc1f9;
+}
+.issue-graph .wrapper .highcharts-figure .highcharts-legend {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

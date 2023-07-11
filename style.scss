@@ -28,7 +28,8 @@ table {
 
 .frame {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+
 	&::after {
 		display: block;
 		content: "";
@@ -200,17 +201,20 @@ table {
 .current-graph {
 	width: 60%;
 	.wrapper {
-		height: 100% !important;
+		height: 110% !important;
 		.dropdown {
 			width: 100%;
 			float: left;
 			text-align: right;
 			margin-top: 10px;
-			padding-right: 10px;
-			.btn {
+			padding-right: 20px;
+			select {
+				width: 150px;
+				height: 30px;
+				border-radius: 10px;
 				background-color: #ced5ed;
 				border: none;
-				color: #000;
+				padding-left: 10px;
 			}
 		}
 		.highcharts-figure {
@@ -227,9 +231,7 @@ table {
 				height: 50%;
 				#donut_container {
 					width: 100%;
-					.highcharts-root {
-						height: 75%;
-					}
+					height: 340px;
 				}
 			}
 		}
@@ -244,9 +246,9 @@ table {
 			}
 			.bar-graph {
 				position: relative;
-				width: 90%;
+				width: 95%;
 				height: 20px;
-				margin: 30px auto;
+				margin: 40px auto 50px 0;
 				div {
 					height: 100%;
 					border-radius: 25px;
@@ -273,6 +275,60 @@ table {
 					background-color: #e07351;
 				}
 			}
+			.graph-desc {
+				width: 95%;
+				> div {
+					display: flex;
+				}
+				div {
+					position: relative;
+					span {
+						display: inline-block;
+						width: 10px;
+						height: 30px;
+						border-radius: 15px;
+						margin-bottom: 10px;
+						margin-right: 10px;
+					}
+					.corp1 {
+						background-color: #5157e0;
+					}
+					.corp2 {
+						background-color: #2ccb92;
+					}
+					.corp3 {
+						background-color: #f2c94c;
+					}
+					.corp4 {
+						background-color: #b8b6b6;
+					}
+					.corp5 {
+						background-color: #e07351;
+					}
+					p {
+						margin-right: 20px;
+					}
+					b {
+						position: absolute;
+						right: 0;
+					}
+					.corp1-point {
+						color: #5157e0;
+					}
+					.corp2-point {
+						color: #2ccb92;
+					}
+					.corp3-point {
+						color: #f2c94c;
+					}
+					.corp4-point {
+						color: #b8b6b6;
+					}
+					.corp5-point {
+						color: #e07351;
+					}
+				}
+			}
 		}
 	}
 }
@@ -280,40 +336,47 @@ table {
 //open issue
 .issue-graph {
 	width: 40%;
-	height: 100% !important;
-	.highcharts-root {
-		border-radius: 10px;
-	}
-	.highcharts-data-table {
-		caption {
-			padding: 1em 0;
-			font-size: 1.2em;
-			color: #555;
-		}
-		th {
-			font-weight: 600;
-			padding: 0.5em;
-		}
-		td,
-		th,
-		caption {
-			padding: 0.5em;
-		}
-		thead tr,
-		tr:nth-child(even) {
-			background: #f8f8f8;
-		}
-		.highcharts-data-table tr:hover {
-			background: #f1f7ff;
-		}
-	}
-	.highcharts-plot-background {
-		fill: #f2f3f6;
-	}
-	.highcharts-series path {
-		fill: #bcacfc;
-		&:hover {
-			fill: #cdc1f9;
+	.wrapper {
+		height: 110% !important;
+		.highcharts-figure {
+			.highcharts-root {
+				border-radius: 10px;
+				.highcharts-plot-background {
+					fill: #f2f3f6;
+				}
+			}
+			.highcharts-data-table {
+				caption {
+					padding: 1em 0;
+					font-size: 1.2em;
+					color: #555;
+				}
+				th {
+					font-weight: 600;
+					padding: 0.5em;
+				}
+				td,
+				th,
+				caption {
+					padding: 0.5em;
+				}
+				thead tr,
+				tr:nth-child(even) {
+					background: #f8f8f8;
+				}
+				.highcharts-data-table tr:hover {
+					background: #f1f7ff;
+				}
+			}
+			.highcharts-series path {
+				fill: #bcacfc;
+				&:hover {
+					fill: #cdc1f9;
+				}
+			}
+			.highcharts-legend {
+				display: none;
+			}
 		}
 	}
 }

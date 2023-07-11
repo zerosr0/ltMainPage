@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <script defer src="main.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -15,8 +13,6 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,7 +20,7 @@
     <div class="title">QMS MY JOB 현황</div>
     <div class="section-container">
       <section class="board">
-        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span></p>
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span><a href="#">more</a></p>
         <div class="wrapper">
           <table>
             <caption class="hidden">미처리문서</caption>
@@ -157,22 +153,20 @@
         <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span></p>
         <div class="wrapper">
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              2023-07
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">2023-06</a></li>
-              <li><a class="dropdown-item" href="#">2023-05</a></li>
-              <li><a class="dropdown-item" href="#">2023-04</a></li>
-              <li><a class="dropdown-item" href="#">2023-03</a></li>
-              <li><a class="dropdown-item" href="#">2023-02</a></li>
-              <li><a class="dropdown-item" href="#">2022-12</a></li>
-              <li><a class="dropdown-item" href="#">2022-11</a></li>
-              <li><a class="dropdown-item" href="#">2022-10</a></li>
-              <li><a class="dropdown-item" href="#">2022-09</a></li>
-              <li><a class="dropdown-item" href="#">2022-08</a></li>
-            </ul>
+            <select name="donut" id="play-range" onchange="monthChange(this)">
+              <option value="2023-07">2023-07</option>
+              <option value="2023-06">2023-06</option>
+              <option value="2023-05">2023-05</option>
+              <option value="2023-04">2023-04</option>
+              <option value="2023-03">2023-03</option>
+              <option value="2023-02">2023-02</option>
+              <option value="2023-01">2023-01</option>
+              <option value="2022-12">2022-12</option>
+              <option value="2022-11">2022-11</option>
+              <option value="2022-10">2022-10</option>
+              <option value="2022-09">2022-09</option>
+              <option value="2022-08">2022-08</option>
+            </select>
           </div>
           <figure class="highcharts-figure">
             <div class="current-graph-title"><img src="image/graph.png" alt="">전체진행 현황</div>
@@ -190,11 +184,31 @@
               <div class="corp5"></div>
             </div>
             <div class="graph-desc">
-              <div class="corp1"><span></span></div>
-              <div class="corp2"><span></span></div>
-              <div class="corp3"><span></span></div>
-              <div class="corp4"><span></span></div>
-              <div class="corp5"><span></span></div>
+              <div><span class="corp1"></span>
+                <p>LG화학</p>
+                <div>37%</div>
+                <b class="corp1-point">7건</b>
+              </div>
+              <div><span class="corp2"></span>
+                <p>LG전자</p>
+                <div>26%</div>
+                <b class="corp2-point">5건</b>
+              </div>
+              <div><span class="corp3"></span>
+                <p>Valeo</p>
+                <div>21%</div>
+                <b class="corp3-point">4건</b>
+              </div>
+              <div><span class="corp4"></span>
+                <p>Subros</p>
+                <div>11%</div>
+                <b class="corp4-point">2건</b>
+              </div>
+              <div><span class="corp5"></span>
+                <p>Hanon</p>
+                <div>5%</div>
+                <b class="corp5-point">1건</b>
+              </div>
             </div>
           </figure>
         </div>

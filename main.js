@@ -1,10 +1,12 @@
 //프로젝트 진행현황 중 전체 진행 현황
 
-const startYear = 2302,
-  endYear = 2307,
-  nbr = 6;
+const startYear = "2023-02",
+  endYear = "2023-07",
+  input = document.getElementById('play-range'),
+  nbr = 3;
 
 let dataset, chart;
+
 
 function getData(month) {
   const output = Object.entries(dataset).map(country => {
@@ -15,10 +17,13 @@ function getData(month) {
 }
 
 function getSubtitle() {
-  const totalNumber = '19건';
-  return `<span style="font-size: 22px">
-            Total: <b> ${totalNumber}</b>
-        </span>`;
+
+  const totalNumber = getData(input.value)[0][1];
+  return `<span style="font-size: 30px">${input.value}</span>
+      <br>
+      <span style="font-size: 22px">
+          Total: <b> ${totalNumber}</b> 건
+      </span>`;
 }
 
 (async () => {
@@ -36,7 +41,7 @@ function getSubtitle() {
       text: getSubtitle(),
       floating: true,
       verticalAlign: 'middle',
-      y: -35
+      y: 10
     },
 
     legend: {
