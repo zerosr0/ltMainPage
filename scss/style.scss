@@ -1,30 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Noto Sans KR", sans-serif;
-}
-ol,
-ul,
-li {
-	list-style: none;
-}
-a {
-	/* 라이브러리 import로 속성이 우선적용되지 않아 important 부여 */
-	text-decoration: none !important;
-	color: #000 !important;
-}
-.hidden {
-	position: absolute;
-	opacity: 0;
-	left: -99999px;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@import "reset.scss";
 
 .frame {
 	width: 100%;
@@ -51,10 +25,24 @@ table {
 		.section-title {
 			display: flex;
 			align-items: center;
+			position: relative;
 			margin-bottom: 10px;
 			img {
 				width: 25px;
 				margin-right: 10px;
+			}
+			a {
+				position: absolute;
+				right: 5px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				width: 50px;
+				height: 25px;
+				color: #fff;
+				background-color: #495464;
+				border-radius: 5px;
+				font-size: 13px;
 			}
 		}
 		.wrapper {
@@ -67,9 +55,6 @@ table {
 }
 
 .section-container {
-	&:nth-of-type(1) {
-		margin-bottom: 20px;
-	}
 	&::after {
 		display: block;
 		content: "";
@@ -107,6 +92,9 @@ table {
 						}
 						.issue-title {
 							flex: 2;
+							a {
+								color: #000;
+							}
 						}
 						.current-status {
 							color: #e07351;
@@ -131,8 +119,10 @@ table {
 				border: 1px solid #000;
 				border-radius: 9px;
 				text-align: center;
-				margin-right: 2%;
-				margin-bottom: 2%;
+				margin: {
+					right: 2%;
+					bottom: 2%;
+				}
 				&:nth-of-type(3n) {
 					margin-right: 0;
 				}
@@ -166,6 +156,7 @@ table {
 	.project-table {
 		width: 40%;
 		text-align: center;
+		vertical-align: middle;
 		.wrapper {
 			border: none !important;
 			table {
@@ -207,20 +198,27 @@ table {
 			float: left;
 			text-align: right;
 			margin-top: 10px;
-			padding-right: 20px;
+			padding: {
+				left: 10px;
+				right: 20px;
+			}
 			select {
 				width: 150px;
 				height: 30px;
 				border-radius: 10px;
 				background-color: #ced5ed;
 				border: none;
-				padding-left: 10px;
+				padding: {
+					left: 10px;
+				}
 			}
 		}
 		.highcharts-figure {
 			width: 50%;
 			float: left;
 			.current-graph-title {
+				display: flex;
+				align-items: center;
 				img {
 					width: 30px;
 					margin: 0 10px;
@@ -239,6 +237,8 @@ table {
 			width: 50%;
 			float: right;
 			.customers-current-title {
+				display: flex;
+				align-items: center;
 				img {
 					width: 30px;
 					margin: 0 10px;
@@ -287,8 +287,10 @@ table {
 						width: 10px;
 						height: 30px;
 						border-radius: 15px;
-						margin-bottom: 10px;
-						margin-right: 10px;
+						margin: {
+							right: 10px;
+							bottom: 10px;
+						}
 					}
 					.corp1 {
 						background-color: #5157e0;
@@ -376,6 +378,168 @@ table {
 			}
 			.highcharts-legend {
 				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.frame {
+		section {
+			.section-title {
+				img {
+					width: 18px;
+				}
+				span {
+					font-size: 14px;
+				}
+				a {
+					height: 20px;
+					font-size: 12px;
+				}
+			}
+			.wrapper {
+				height: 95%;
+			}
+		}
+	}
+
+	.section-container {
+		margin-bottom: 20px;
+		.board {
+			.wrapper {
+				table {
+					tbody {
+						font-size: 13px;
+						tr {
+							gap: 5px;
+						}
+					}
+				}
+			}
+		}
+		.icons {
+			.wrapper {
+				article {
+					span {
+						font-size: 14px;
+					}
+					.icons-value {
+						img {
+							width: 25px;
+						}
+						b {
+							font-size: 23px;
+						}
+					}
+				}
+			}
+		}
+		.project-table {
+			.wrapper {
+				table {
+					tbody {
+						font-size: 14px;
+						tr {
+							th,
+							td {
+								height: 71.5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//프로젝트 진행현황
+	.current-graph {
+		margin-bottom: 80px;
+		.wrapper {
+			.highcharts-figure {
+				.current-graph-title {
+					font-size: 14px;
+					img {
+						width: 22px;
+					}
+				}
+			}
+			.customers-current-graph {
+				.customers-current-title {
+					font-size: 14px;
+					img {
+						width: 22px;
+					}
+				}
+				.graph-desc {
+					div {
+						span {
+							display: inline-block;
+							width: 10px;
+							height: 30px;
+							border-radius: 15px;
+							margin: {
+								right: 10px;
+								bottom: 10px;
+							}
+						}
+						p {
+							margin-right: 20px;
+						}
+						b {
+							position: absolute;
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//open issue
+	.issue-graph {
+		width: 40%;
+		.wrapper {
+			height: 110% !important;
+			.highcharts-figure {
+				.highcharts-root {
+					border-radius: 10px;
+					.highcharts-plot-background {
+						fill: #f2f3f6;
+					}
+				}
+				.highcharts-data-table {
+					caption {
+						padding: 1em 0;
+						font-size: 1.2em;
+						color: #555;
+					}
+					th {
+						font-weight: 600;
+						padding: 0.5em;
+					}
+					td,
+					th,
+					caption {
+						padding: 0.5em;
+					}
+					thead tr,
+					tr:nth-child(even) {
+						background: #f8f8f8;
+					}
+					.highcharts-data-table tr:hover {
+						background: #f1f7ff;
+					}
+				}
+				.highcharts-series path {
+					fill: #bcacfc;
+					&:hover {
+						fill: #cdc1f9;
+					}
+				}
+				.highcharts-legend {
+					display: none;
+				}
 			}
 		}
 	}

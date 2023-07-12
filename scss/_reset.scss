@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Noto Sans KR", sans-serif;
+}
+ol,
+ul,
+li {
+	list-style: none;
+}
+a {
+	/* 라이브러리 import로 속성이 우선적용되지 않아 important 부여 */
+	text-decoration: none !important;
+}
+.hidden {
+	position: absolute;
+	opacity: 0;
+	left: -99999px;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <script defer src="main.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -93,7 +93,8 @@
         </div>
       </section>
       <section class="project-table">
-        <p class="section-title"><img src="image/sectionTitle.png" alt=""><b>My Project</b></p>
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>My Project</span><a href="#">more</a>
+        </p>
         <div class="wrapper">
           <table>
             <caption class="hidden">My Project</caption>
@@ -150,10 +151,10 @@
     </div>
     <div class="section-container">
       <section class="current-graph">
-        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span></p>
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span><a href="#">more</a></p>
         <div class="wrapper">
           <div class="dropdown">
-            <select name="donut" id="play-range" onchange="monthChange(this)">
+            <select name="donut" id="play-range" onchange="getData(this)">
               <option value="2023-07">2023-07</option>
               <option value="2023-06">2023-06</option>
               <option value="2023-05">2023-05</option>
@@ -214,7 +215,8 @@
         </div>
       </section>
       <section class="issue-graph">
-        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>Open Issue</span></p>
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>Open Issue</span><a href="#">more</a>
+        </p>
         <div class="wrapper">
           <figure class="highcharts-figure">
             <div id="container"></div>

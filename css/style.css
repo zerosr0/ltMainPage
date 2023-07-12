@@ -16,7 +16,6 @@ li {
 a {
   /* 라이브러리 import로 속성이 우선적용되지 않아 important 부여 */
   text-decoration: none !important;
-  color: #000 !important;
 }
 
 .hidden {
@@ -56,11 +55,25 @@ table {
 .frame section .section-title {
   display: flex;
   align-items: center;
+  position: relative;
   margin-bottom: 10px;
 }
 .frame section .section-title img {
   width: 25px;
   margin-right: 10px;
+}
+.frame section .section-title a {
+  position: absolute;
+  right: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 25px;
+  color: #fff;
+  background-color: #495464;
+  border-radius: 5px;
+  font-size: 13px;
 }
 .frame section .wrapper {
   width: 100%;
@@ -69,9 +82,6 @@ table {
   border-radius: 10px;
 }
 
-.section-container:nth-of-type(1) {
-  margin-bottom: 20px;
-}
 .section-container::after {
   display: block;
   content: "";
@@ -112,6 +122,9 @@ table {
 }
 .section-container .board .wrapper table tbody tr .issue-title {
   flex: 2;
+}
+.section-container .board .wrapper table tbody tr .issue-title a {
+  color: #000;
 }
 .section-container .board .wrapper table tbody tr .current-status {
   color: #e07351;
@@ -164,6 +177,7 @@ table {
 .section-container .project-table {
   width: 40%;
   text-align: center;
+  vertical-align: middle;
 }
 .section-container .project-table .wrapper {
   border: none !important;
@@ -204,6 +218,7 @@ table {
   float: left;
   text-align: right;
   margin-top: 10px;
+  padding-left: 10px;
   padding-right: 20px;
 }
 .current-graph .wrapper .dropdown select {
@@ -217,6 +232,10 @@ table {
 .current-graph .wrapper .highcharts-figure {
   width: 50%;
   float: left;
+}
+.current-graph .wrapper .highcharts-figure .current-graph-title {
+  display: flex;
+  align-items: center;
 }
 .current-graph .wrapper .highcharts-figure .current-graph-title img {
   width: 30px;
@@ -233,6 +252,10 @@ table {
 .current-graph .wrapper .customers-current-graph {
   width: 50%;
   float: right;
+}
+.current-graph .wrapper .customers-current-graph .customers-current-title {
+  display: flex;
+  align-items: center;
 }
 .current-graph .wrapper .customers-current-graph .customers-current-title img {
   width: 30px;
@@ -283,8 +306,8 @@ table {
   width: 10px;
   height: 30px;
   border-radius: 15px;
-  margin-bottom: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 .current-graph .wrapper .customers-current-graph .graph-desc div .corp1 {
   background-color: #5157e0;
@@ -365,6 +388,119 @@ table {
 }
 .issue-graph .wrapper .highcharts-figure .highcharts-legend {
   display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .frame section .section-title img {
+    width: 18px;
+  }
+  .frame section .section-title span {
+    font-size: 14px;
+  }
+  .frame section .section-title a {
+    height: 20px;
+    font-size: 12px;
+  }
+  .frame section .wrapper {
+    height: 95%;
+  }
+  .section-container {
+    margin-bottom: 20px;
+  }
+  .section-container .board .wrapper table tbody {
+    font-size: 13px;
+  }
+  .section-container .board .wrapper table tbody tr {
+    gap: 5px;
+  }
+  .section-container .icons .wrapper article span {
+    font-size: 14px;
+  }
+  .section-container .icons .wrapper article .icons-value img {
+    width: 25px;
+  }
+  .section-container .icons .wrapper article .icons-value b {
+    font-size: 23px;
+  }
+  .section-container .project-table .wrapper table tbody {
+    font-size: 14px;
+  }
+  .section-container .project-table .wrapper table tbody tr th,
+  .section-container .project-table .wrapper table tbody tr td {
+    height: 71.5px;
+  }
+  .current-graph {
+    margin-bottom: 80px;
+  }
+  .current-graph .wrapper .highcharts-figure .current-graph-title {
+    font-size: 14px;
+  }
+  .current-graph .wrapper .highcharts-figure .current-graph-title img {
+    width: 22px;
+  }
+  .current-graph .wrapper .customers-current-graph .customers-current-title {
+    font-size: 14px;
+  }
+  .current-graph .wrapper .customers-current-graph .customers-current-title img {
+    width: 22px;
+  }
+  .current-graph .wrapper .customers-current-graph .graph-desc div span {
+    display: inline-block;
+    width: 10px;
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .current-graph .wrapper .customers-current-graph .graph-desc div p {
+    margin-right: 20px;
+  }
+  .current-graph .wrapper .customers-current-graph .graph-desc div b {
+    position: absolute;
+    right: 0;
+  }
+  .issue-graph {
+    width: 40%;
+  }
+  .issue-graph .wrapper {
+    height: 110% !important;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-root {
+    border-radius: 10px;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-root .highcharts-plot-background {
+    fill: #f2f3f6;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table td,
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table th,
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
+    padding: 0.5em;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table thead tr,
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-data-table .highcharts-data-table tr:hover {
+    background: #f1f7ff;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-series path {
+    fill: #bcacfc;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-series path:hover {
+    fill: #cdc1f9;
+  }
+  .issue-graph .wrapper .highcharts-figure .highcharts-legend {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
