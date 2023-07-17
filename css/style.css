@@ -115,23 +115,37 @@ table {
 .section-container .board .wrapper table tbody tr:hover {
   background-color: #f2f3f6;
 }
-.section-container .board .wrapper table tbody tr .issue-type {
-  color: #2aab7d;
-  flex: 1;
-  padding-left: 8px;
+.section-container .board .wrapper table tbody tr td {
+  display: flex;
+  flex-direction: column;
 }
 .section-container .board .wrapper table tbody tr .issue-title {
   flex: 2;
+  padding-left: 5px;
+}
+.section-container .board .wrapper table tbody tr .issue-title .issue-type {
+  color: #2aab7d;
 }
 .section-container .board .wrapper table tbody tr .issue-title a {
   color: #000;
 }
-.section-container .board .wrapper table tbody tr .current-status {
-  color: #e07351;
+.section-container .board .wrapper table tbody tr .outstanding {
   flex: 1;
 }
-.section-container .board .wrapper table tbody tr .write-date {
+.section-container .board .wrapper table tbody tr .outstanding span {
+  color: #5978b9;
+}
+.section-container .board .wrapper table tbody tr .outstanding a {
+  color: #000;
+}
+.section-container .board .wrapper table tbody tr .processing-status {
   flex: 1;
+}
+.section-container .board .wrapper table tbody tr .processing-status .current-status {
+  color: #e07351;
+}
+.section-container .board .wrapper table tbody tr .processing-status a {
+  color: #000;
 }
 .section-container .icons {
   width: 25%;
@@ -155,23 +169,26 @@ table {
 .section-container .icons .wrapper article:nth-of-type(7), .section-container .icons .wrapper article:nth-of-type(8), .section-container .icons .wrapper article:nth-of-type(9) {
   margin-bottom: 0;
 }
-.section-container .icons .wrapper article span {
+.section-container .icons .wrapper article a {
+  color: #000;
+}
+.section-container .icons .wrapper article a span {
   display: block;
   margin: 15px auto;
 }
-.section-container .icons .wrapper article .icons-value {
+.section-container .icons .wrapper article a .icons-value {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.section-container .icons .wrapper article .icons-value img {
+.section-container .icons .wrapper article a .icons-value img {
   width: 35px;
 }
-.section-container .icons .wrapper article .icons-value b {
+.section-container .icons .wrapper article a .icons-value b {
   font-size: 25px;
   color: #5978b9;
 }
-.section-container .icons .wrapper article .icons-value b.monthly-issue {
+.section-container .icons .wrapper article a .icons-value b.monthly-issue {
   color: #f46161;
 }
 .section-container .project-table {
@@ -413,13 +430,13 @@ table {
   .section-container .board .wrapper table tbody tr {
     gap: 5px;
   }
-  .section-container .icons .wrapper article span {
+  .section-container .icons .wrapper article a span {
     font-size: 14px;
   }
-  .section-container .icons .wrapper article .icons-value img {
+  .section-container .icons .wrapper article a .icons-value img {
     width: 25px;
   }
-  .section-container .icons .wrapper article .icons-value b {
+  .section-container .icons .wrapper article a .icons-value b {
     font-size: 23px;
   }
   .section-container .project-table .wrapper table tbody {

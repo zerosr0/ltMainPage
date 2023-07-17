@@ -1,8 +1,6 @@
 //프로젝트 진행현황 중 전체 진행 현황
 
-const startYear = "2023-02",
-  endYear = "2023-07",
-  input = document.getElementById('play-range'),
+let input = document.getElementById('play-range'),
   nbr = 3;
 
 let dataset, chart;
@@ -18,13 +16,14 @@ function getData(month) {
 
 function getSubtitle() {
 
-  const totalNumber = getData(input.value)[0][1];
-  return `<span style="font-size: 30px">${input.value}</span>
+  const total_number = getData(input.value)[0][1];
+  return `<span style="font-size: 25px">${input.value}</span>
       <br>
-      <span style="font-size: 22px">
-          Total: <b> ${totalNumber}</b> 건
+      <span style="font-size: 20px">
+          Total: <b class="total-number"> ${total_number}</b> 건
       </span>`;
 }
+
 
 (async () => {
   dataset = await fetch(
@@ -75,12 +74,31 @@ function getSubtitle() {
     series: [
       {
         type: 'pie',
-        name: startYear,
-        data: getData(startYear)[1]
+        name: input.value,
+        data: getData(input.value)[1]
       }
     ]
   });
 })();
+
+//프로젝트 진행현황 중 고객사별 현황
+let customer_graph = document.querySelector(".graph-desc")
+let corp1 = customer_graph.querySelector('.corp1-point');
+let corp2 = customer_graph.querySelector('.corp2-point');
+let corp3 = customer_graph.querySelector('.corp3-point');
+let corp4 = customer_graph.querySelector('.corp4-point');
+let corp5 = customer_graph.querySelector('.corp5-point');
+
+let corp1_per = corp1.previousElementSibling;
+let corp2_per = corp2.previousElementSibling;
+let corp3_per = corp3.previousElementSibling;
+let corp4_per = corp4.previousElementSibling;
+let corp5_per = corp5.previousElementSibling;
+
+let num = document.querySelector('.total-number');
+let corp1_current = corp1.innerText.slice(0, -1);
+// corp1_per.innerText = corp1_current / total_number;
+console.log(num);
 
 
 
