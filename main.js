@@ -16,11 +16,11 @@ function getData(month) {
 
 function getSubtitle() {
 
-  const total_number = getData(input.value)[0][1];
-  return `<span style="font-size: 25px">${input.value}</span>
+  const total_number = getData(input.innerText)[0][1];
+  return `<span style="font-size: 25px">${input.innerText}</span>
       <br>
       <span style="font-size: 20px">
-          Total: <b class="total-number"> ${total_number}</b> 건
+          Total : <b class="total-number"> ${total_number}</b> 건
       </span>`;
 }
 
@@ -74,8 +74,8 @@ function getSubtitle() {
     series: [
       {
         type: 'pie',
-        name: input.value,
-        data: getData(input.value)[1]
+        name: input.innerText,
+        data: getData(input.innerText)[1]
       }
     ]
   });
@@ -108,33 +108,92 @@ Highcharts.chart('container', {
   chart: {
     type: 'column'
   },
+  title: {
+    align: 'center',
+    text: 'OPEN ISSUE 현황'
+  },
+  subtitle: {
+    enabled: false,
+  },
+  accessibility: {
+    announceNewData: {
+      enabled: true
+    }
+  },
+  xAxis: {
+    type: 'category'
+  },
+  yAxis: {
+    title: {
+      text: ''
+    }
+
+  },
+  legend: {
+    enabled: false
+  },
+  plotOptions: {
+    series: {
+      borderWidth: 0,
+      dataLabels: {
+        enabled: true,
+        format: '{point.y}건'
+      }
+    }
+  },
+
+  tooltip: {
+    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}건</b>'
+  },
+
+  series: [
+    {
+      name: 'Open Issue',
+      colorByPoint: true,
+      data: [
+        {
+          name: '23-02',
+          y: 4,
+          color: '#bcacfc',
+        },
+        {
+          name: '23-03',
+          y: 11,
+          color: '#bcacfc',
+        },
+        {
+          name: '23-04',
+          y: 6,
+          color: '#bcacfc',
+        },
+        {
+          name: '23-05',
+          y: 5,
+          color: '#bcacfc',
+        },
+        {
+          name: '23-06',
+          y: 10,
+          color: '#bcacfc',
+        },
+        {
+          name: '23-07',
+          y: 7,
+          color: '#bcacfc',
+        },
+      ]
+    }
+  ],
+  drilldown: {
+    breadcrumbs: {
+      position: {
+        align: 'right'
+      }
+    },
+  },
   credits: {
     enabled: false
   },
-  title: {
-    text: 'OPEN ISSUE 현황',
-    align: 'center'
-  },
-  xAxis: {
-    categories: ['23-02', '23-03', '23-04', '23-05', '23-06', '23-07'],
-    accessibility: {
-      description: 'months'
-    }
-  },
-  yAxis: {
-    title: false,
-  },
-  plotOptions: {
-    column: {
-      pointPadding: 0.2,
-      borderWidth: 0
-    }
-  },
-  series: [
-    {
-      name: 'issue',
-      data: [4, 11, 6, 7, 9, 6]
-    },
-  ]
 
 });

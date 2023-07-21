@@ -12,6 +12,8 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
 </head>
 
@@ -20,41 +22,40 @@
     <div class="title">QMS MY JOB 현황</div>
     <div class="section-container">
       <section class="board">
-        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>내처리문서</span><a href="#">more</a></p>
+        <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span><a href="#">more</a></p>
         <div class="wrapper">
           <table>
-            <caption class="hidden">내처리문서</caption>
+            <caption class="hidden">미처리문서</caption>
             <tbody>
               <tr>
-                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">이슈제목</a></td>
-                <td class="outstanding"><span>미처리문서</span><a href="#">참조문서</a></td>
-                <td class="processing-status"><span class="current-status">문제점승인</span><a href="#">23.07.05 운영자</a></td>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">이슈제목</a></td>
+                <td class="current-status">문제점승인</td>
+                <td class="write-date">23.07.05 운영자</td>
               </tr>
               <tr>
-                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">이슈제목</a></td>
-                <td class="outstanding"><span>미처리문서</span><a href="#">참조문서</a></td>
-                <td class="processing-status"><span class="current-status">문제점승인</span><a href="#">23.07.04 운영자</a></td>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">이슈제목</a></td>
+                <td class="current-status">문제점승인</td>
+                <td class="write-date">23.07.04 운영자</td>
               </tr>
               <tr>
-                <td class="issue-title"><span class="issue-type">개발품질</span><a href="#">[테스트 프로젝트_8] 문서 설계 사항 검토</a>
-                </td>
-                <td class="outstanding"><span>미처리문서</span><a href="#">참조문서</a></td>
-                <td class="processing-status"><span class="current-status">실적문서승인</span><a href="#">23.07.03 운영자</a>
-                </td>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_8] 문서 설계 사...</a></td>
+                <td class="current-status">실적문서승인</td>
+                <td class="write-date">23.07.03 운영자</td>
               </tr>
               <tr>
-                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">[테스트 프로젝트_7] 문서 설계 사항 검토</a>
-                </td>
-                <td class="outstanding"><span>미처리문서</span><a href="#">참조문서</a></td>
-                <td class="processing-status"><span class="current-status">처리결과확인</span><a href="#">23.07.03 운영자</a>
-                </td>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_7] 문서 설계 사...</a></td>
+                <td class="current-status">처리결과확인</td>
+                <td class="write-date">23.07.03 운영자</td>
               </tr>
               <tr>
-                <td class="issue-title"><span class="issue-type">개발품질</span><a href="#">[테스트 프로젝트_6] 문서 설계 사항 검토</a>
-                </td>
-                <td class="outstanding"><span>미처리문서</span><a href="#">참조문서</a></td>
-                <td class="processing-status"><span class="current-status">실적문서승인</span><a href="#">23.07.03 운영자</a>
-                </td>
+                <td class="issue-type">오픈이슈</td>
+                <td class="issue-title"><a href="#">[테스트 프로젝트_6] 문서 설계 사...</a></td>
+                <td class="current-status">처리결과확인</td>
+                <td class="write-date">23.06.30 운영자</td>
               </tr>
             </tbody>
           </table>
@@ -68,7 +69,7 @@
             </a>
           </article>
           <article><a href="#"><span>문서관리</span>
-              <div class="icons-value"><img src="image/문서관리.png" alt=""><b>57%</b></div>
+              <div class="icons-value"><img src="image/문서관리.png" alt=""><b>5</b></div>
             </a>
           </article>
           <article><a href="#"><span>도면관리</span>
@@ -80,19 +81,19 @@
               </div>
             </a>
           </article>
+          <article class="emphasis"><a href="#"><span>참조문서</span>
+              <div class="icons-value"><img src="image/당월조치.png" alt=""><b>25</b></div>
+            </a>
+          </article>
           <article><a href="#"><span>과거품질</span>
               <div class="icons-value"><img src="image/과거품질.png" alt=""><b>0</b></div>
             </a>
           </article>
-          <article><a href="#"><span>당월이슈</span>
+          <article><a href="#"><span>오픈이슈</span>
               <div class="icons-value"><img src="image/당월이슈.png" alt=""><b class="monthly-issue">7</b></div>
             </a>
           </article>
-          <article><a href="#"><span>당월조치</span>
-              <div class="icons-value"><img src="image/당월조치.png" alt=""><b>3/7</b></div>
-            </a>
-          </article>
-          <article><a href="#"><span>출하품질</span>
+          <article><a href="#"><span>표준관리</span>
               <div class="icons-value"><img src="image/출하품질.png" alt=""><b>0</b></div>
             </a>
           </article>
@@ -154,6 +155,15 @@
                 <td></td>
                 <td></td>
               </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -163,26 +173,11 @@
       <section class="current-graph">
         <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>프로젝트 진행현황</span><a href="#">more</a></p>
         <div class="wrapper">
-          <div class="dropdown">
-            <select name="donut" id="play-range" onchange="getData(this.value)">
-              <option value="2023-07">2023-07</option>
-              <option value="2023-06">2023-06</option>
-              <option value="2023-05">2023-05</option>
-              <option value="2023-04">2023-04</option>
-              <option value="2023-03">2023-03</option>
-              <option value="2023-02">2023-02</option>
-              <option value="2023-01">2023-01</option>
-              <option value="2022-12">2022-12</option>
-              <option value="2022-11">2022-11</option>
-              <option value="2022-10">2022-10</option>
-              <option value="2022-09">2022-09</option>
-              <option value="2022-08">2022-08</option>
-            </select>
-          </div>
           <figure class="highcharts-figure">
             <div class="current-graph-title"><img src="image/graph.png" alt="">전체진행 현황</div>
             <div id="parent_container">
               <div id="donut_container"></div>
+              <span class="hidden" id="play-range">2022-2023</span>
             </div>
           </figure>
           <figure class="customers-current-graph">
