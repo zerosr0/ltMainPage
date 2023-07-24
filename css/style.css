@@ -133,8 +133,10 @@ table {
 .section-container .board .wrapper table tbody tr .issue-title .issue-type {
   color: #2aab7d;
 }
-.section-container .board .wrapper table tbody tr .issue-title a {
+.section-container .board .wrapper table tbody tr .issue-title .detail-title {
   color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .section-container .board .wrapper table tbody tr .processing-status {
   flex: 2;
@@ -521,7 +523,7 @@ table {
     display: none;
   }
 }
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1275px) {
   section {
     width: 100% !important;
   }

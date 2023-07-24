@@ -101,8 +101,10 @@
 							.issue-type {
 								color: #2aab7d;
 							}
-							a {
+							.detail-title {
 								color: #000;
+								text-overflow: ellipsis;
+								white-space: nowrap;
 							}
 						}
 						.processing-status {
@@ -552,7 +554,7 @@
 	}
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1275px) {
 	section {
 		width: 100% !important;
 	}

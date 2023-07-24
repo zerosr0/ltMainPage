@@ -1,5 +1,19 @@
-//프로젝트 진행현황 중 전체 진행 현황
+//미처리문서 table에 title 길이 길면 ...으로 축약해서 보여주기
+let issueTitle = document.querySelectorAll(".detail-title");
 
+let result = [];
+Array.from(issueTitle).map((el, idx) => {
+  let titleText = el.innerHTML;
+  if (titleText.length > 25) {
+    titleText = titleText.slice(0, 25) + '...';
+  }
+
+  issueTitle[idx].innerText = titleText;
+})
+
+
+
+//프로젝트 진행현황 중 전체 진행 현황
 let startYear = 1965,
   endYear = 2021,
   input = document.getElementById('play-range'),
@@ -17,7 +31,7 @@ function getData(year) {
 
 function getSubtitle() {
   const totalNumber = getData(input.value)[0][1];
-  return `<p style="font-size: 22px; text-align:center;">Total : <b>19</b>건</p>
+  return `<p style="font-size: 22px; text-align:center;">Total : <b>20</b>건</p>
   <br><b style="font-size: 16px">2021.07~2023.07</b>
       `;
 }
@@ -80,24 +94,6 @@ function getSubtitle() {
 })();
 
 //프로젝트 진행현황 중 고객사별 현황
-let customer_graph = document.querySelector(".graph-desc")
-let corp1 = customer_graph.querySelector('.corp1-point');
-let corp2 = customer_graph.querySelector('.corp2-point');
-let corp3 = customer_graph.querySelector('.corp3-point');
-let corp4 = customer_graph.querySelector('.corp4-point');
-let corp5 = customer_graph.querySelector('.corp5-point');
-
-let corp1_per = corp1.previousElementSibling;
-let corp2_per = corp2.previousElementSibling;
-let corp3_per = corp3.previousElementSibling;
-let corp4_per = corp4.previousElementSibling;
-let corp5_per = corp5.previousElementSibling;
-
-let num = document.querySelector('.total-number');
-let corp1_current = corp1.innerText.slice(0, -1);
-// corp1_per.innerText = corp1_current / total_number;
-console.log(num);
-
 
 
 
