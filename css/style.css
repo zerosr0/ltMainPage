@@ -100,6 +100,7 @@ table {
 .section-container .board .wrapper table {
   width: 100%;
   height: 100%;
+  table-layout: fixed;
 }
 .section-container .board .wrapper table tbody {
   width: 100%;
@@ -127,7 +128,7 @@ table {
   flex-direction: column;
 }
 .section-container .board .wrapper table tbody tr .issue-title {
-  flex: 5;
+  width: 68%;
   padding-left: 5px;
 }
 .section-container .board .wrapper table tbody tr .issue-title .issue-type {
@@ -135,11 +136,14 @@ table {
 }
 .section-container .board .wrapper table tbody tr .issue-title .detail-title {
   color: #000;
+  display: block;
+  width: 100%;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
 }
 .section-container .board .wrapper table tbody tr .processing-status {
-  flex: 2;
+  width: 32%;
   text-align: right;
   padding-right: 5px;
 }

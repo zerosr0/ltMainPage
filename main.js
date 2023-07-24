@@ -1,15 +1,15 @@
-//미처리문서 table에 title 길이 길면 ...으로 축약해서 보여주기
-let issueTitle = document.querySelectorAll(".detail-title");
+// //미처리문서 table에 title 길이 길면 ...으로 축약해서 보여주기
+// let issueTitle = document.querySelectorAll(".detail-title");
 
-let result = [];
-Array.from(issueTitle).map((el, idx) => {
-  let titleText = el.innerHTML;
-  if (titleText.length > 25) {
-    titleText = titleText.slice(0, 25) + '...';
-  }
+// let result = [];
+// Array.from(issueTitle).map((el, idx) => {
+//   let titleText = el.innerHTML;
+//   if (titleText.length > 25) {
+//     titleText = titleText.slice(0, 25) + '...';
+//   }
 
-  issueTitle[idx].innerText = titleText;
-})
+//   issueTitle[idx].innerText = titleText;
+// })
 
 
 
@@ -31,7 +31,7 @@ function getData(year) {
 
 function getSubtitle() {
   const totalNumber = getData(input.value)[0][1];
-  return `<p style="font-size: 22px; text-align:center;">Total : <b>20</b>건</p>
+  return `<p style="font-size: 22px; text-align:center;">합계 : <b>20</b>건</p>
   <br><b style="font-size: 16px">2021.07~2023.07</b>
       `;
 }
