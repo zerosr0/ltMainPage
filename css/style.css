@@ -40,7 +40,7 @@ table {
 }
 .frame .title {
   width: 100%;
-  height: 50px;
+  height: 37px;
   background-color: #142759;
   color: #fff;
   display: flex;
@@ -80,6 +80,13 @@ table {
   height: 90%;
   border: 1px solid #000;
   border-radius: 10px;
+  background-color: #fff;
+}
+.frame section .icons-wrapper {
+  background-color: transparent;
+}
+.frame section .icons-wrapper article {
+  background-color: #fff;
 }
 
 .section-container::after {
@@ -115,23 +122,30 @@ table {
 .section-container .board .wrapper table tbody tr:hover {
   background-color: #f2f3f6;
 }
-.section-container .board .wrapper table tbody tr .issue-type {
-  color: #2aab7d;
-  flex: 1;
-  padding-left: 8px;
+.section-container .board .wrapper table tbody tr td {
+  display: flex;
+  flex-direction: column;
 }
 .section-container .board .wrapper table tbody tr .issue-title {
-  flex: 2;
+  flex: 5;
+  padding-left: 5px;
+}
+.section-container .board .wrapper table tbody tr .issue-title .issue-type {
+  color: #2aab7d;
 }
 .section-container .board .wrapper table tbody tr .issue-title a {
   color: #000;
 }
-.section-container .board .wrapper table tbody tr .current-status {
-  color: #e07351;
-  flex: 1;
+.section-container .board .wrapper table tbody tr .processing-status {
+  flex: 2;
+  text-align: right;
+  padding-right: 5px;
 }
-.section-container .board .wrapper table tbody tr .write-date {
-  flex: 1;
+.section-container .board .wrapper table tbody tr .processing-status .current-status {
+  color: #e07351;
+}
+.section-container .board .wrapper table tbody tr .processing-status a {
+  color: #000;
 }
 .section-container .icons {
   width: 25%;
@@ -213,7 +227,7 @@ table {
 .section-container .project-table .wrapper table tbody tr th,
 .section-container .project-table .wrapper table tbody tr td {
   border-right: 1px solid #000;
-  height: 56.5px;
+  height: 57px;
   border-radius: 10px 10px 0 0;
 }
 .section-container .project-table .wrapper table tbody tr th:last-child,
@@ -228,8 +242,24 @@ table {
   width: 60%;
 }
 .current-graph .wrapper {
+  height: 110% !important;
   padding-top: 15px;
-  height: 100% !important;
+}
+.current-graph .wrapper .dropdown {
+  width: 100%;
+  float: left;
+  text-align: right;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+.current-graph .wrapper .dropdown select {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ced5ed;
+  border: none;
+  padding-left: 10px;
 }
 .current-graph .wrapper .highcharts-figure {
   width: 50%;
@@ -245,11 +275,11 @@ table {
 }
 .current-graph .wrapper .highcharts-figure #parent_container {
   width: 100%;
-  height: 65%;
+  height: 50%;
 }
 .current-graph .wrapper .highcharts-figure #parent_container #donut_container {
   width: 100%;
-  height: 330px;
+  height: 340px;
 }
 .current-graph .wrapper .customers-current-graph {
   width: 50%;
@@ -275,24 +305,28 @@ table {
   float: left;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph .corp1 {
-  width: 37%;
+  width: 35%;
   background-color: #5157e0;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph .corp2 {
-  width: 26%;
+  width: 25%;
   background-color: #2ccb92;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph .corp3 {
-  width: 21%;
+  width: 20%;
   background-color: #f2c94c;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph .corp4 {
-  width: 11%;
+  width: 10%;
   background-color: #b8b6b6;
 }
 .current-graph .wrapper .customers-current-graph .bar-graph .corp5 {
   width: 5%;
   background-color: #e07351;
+}
+.current-graph .wrapper .customers-current-graph .bar-graph .corp6 {
+  width: 5%;
+  background-color: #3f89b1;
 }
 .current-graph .wrapper .customers-current-graph .graph-desc {
   width: 95%;
@@ -326,6 +360,9 @@ table {
 .current-graph .wrapper .customers-current-graph .graph-desc div .corp5 {
   background-color: #e07351;
 }
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp6 {
+  background-color: #3f89b1;
+}
 .current-graph .wrapper .customers-current-graph .graph-desc div p {
   margin-right: 20px;
 }
@@ -348,94 +385,68 @@ table {
 .current-graph .wrapper .customers-current-graph .graph-desc div .corp5-point {
   color: #e07351;
 }
+.current-graph .wrapper .customers-current-graph .graph-desc div .corp6-point {
+  color: #3f89b1;
+}
 
 .issue-graph {
   width: 40%;
 }
 .issue-graph .wrapper {
-  height: 100% !important;
+  height: 110% !important;
+  padding-top: 15px;
 }
-.issue-graph .wrapper .highcharts-figure,
-.issue-graph .wrapper .highcharts-data-table table {
-  min-width: 310px;
-  max-width: 800px;
-  margin: 1em auto;
+.issue-graph .wrapper .highcharts-figure .highcharts-root {
+  border-radius: 10px;
 }
-.issue-graph .wrapper #container {
-  height: 355px;
-}
-.issue-graph .wrapper .highcharts-plot-background {
+.issue-graph .wrapper .highcharts-figure .highcharts-root .highcharts-plot-background {
   fill: #f2f3f6;
 }
-.issue-graph .wrapper .highcharts-data-table table {
-  font-family: Verdana, sans-serif;
-  border-collapse: collapse;
-  border: 1px solid #ebebeb;
-  margin: 10px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-.issue-graph .wrapper .highcharts-data-table caption {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
   padding: 1em 0;
   font-size: 1.2em;
   color: #555;
 }
-.issue-graph .wrapper .highcharts-data-table th {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table th {
   font-weight: 600;
   padding: 0.5em;
 }
-.issue-graph .wrapper .highcharts-data-table td,
-.issue-graph .wrapper .highcharts-data-table th,
-.issue-graph .wrapper .highcharts-data-table caption {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table td,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table th,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table caption {
   padding: 0.5em;
 }
-.issue-graph .wrapper .highcharts-data-table thead tr,
-.issue-graph .wrapper .highcharts-data-table tr:nth-child(even) {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table thead tr,
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table tr:nth-child(even) {
   background: #f8f8f8;
 }
-.issue-graph .wrapper .highcharts-data-table tr:hover {
+.issue-graph .wrapper .highcharts-figure .highcharts-data-table .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }
+.issue-graph .wrapper .highcharts-figure .highcharts-series path {
+  fill: #bcacfc;
+}
+.issue-graph .wrapper .highcharts-figure .highcharts-series path:hover {
+  fill: #cdc1f9;
+}
+.issue-graph .wrapper .highcharts-figure .highcharts-legend {
+  display: none;
+}
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1380px) {
   .frame section .section-title img {
-    width: 18px;
+    width: 20px;
   }
   .frame section .section-title span {
-    font-size: 14px;
+    font-size: 15px;
   }
   .frame section .section-title a {
+    width: 40px;
     height: 20px;
     font-size: 12px;
   }
-  .frame section .wrapper {
-    height: 95%;
-  }
-  .section-container {
-    margin-bottom: 20px;
-  }
-  .section-container .board .wrapper table tbody {
-    font-size: 13px;
-  }
-  .section-container .board .wrapper table tbody tr {
-    gap: 5px;
-  }
-  .section-container .icons .wrapper article a span {
+  .section-container .board .wrapper table tbody tr td {
     font-size: 14px;
-  }
-  .section-container .icons .wrapper article a .icons-value img {
-    width: 25px;
-  }
-  .section-container .icons .wrapper article a .icons-value b {
-    font-size: 23px;
-  }
-  .section-container .project-table .wrapper table tbody {
-    font-size: 14px;
-  }
-  .section-container .project-table .wrapper table tbody tr th,
-  .section-container .project-table .wrapper table tbody tr td {
-    height: 60px;
   }
   .current-graph {
     margin-bottom: 80px;
@@ -508,6 +519,14 @@ table {
   }
   .issue-graph .wrapper .highcharts-figure .highcharts-legend {
     display: none;
+  }
+}
+@media screen and (max-width: 1140px) {
+  section {
+    width: 100% !important;
+  }
+  section.issue-graph {
+    margin-bottom: 100px;
   }
 }
 

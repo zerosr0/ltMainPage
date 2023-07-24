@@ -1,33 +1,31 @@
 //프로젝트 진행현황 중 전체 진행 현황
 
-let input = document.getElementById('play-range'),
+let startYear = 1965,
+  endYear = 2021,
+  input = document.getElementById('play-range'),
   nbr = 3;
-
 let dataset, chart;
 
 
-function getData(month) {
+function getData(year) {
   const output = Object.entries(dataset).map(country => {
     const [countryName, countryData] = country;
-    return [countryName, Number(countryData[month])];
+    return [countryName, Number(countryData[year])];
   });
   return [output[0], output.slice(1, nbr)];
 }
 
 function getSubtitle() {
-
-  const total_number = getData(input.innerText)[0][1];
-  return `<span style="font-size: 25px">${input.innerText}</span>
-      <br>
-      <span style="font-size: 20px">
-          Total : <b class="total-number"> ${total_number}</b> 건
-      </span>`;
+  const totalNumber = getData(input.value)[0][1];
+  return `<p style="font-size: 22px; text-align:center;">Total : <b>19</b>건</p>
+  <br><b style="font-size: 16px">2021.07~2023.07</b>
+      `;
 }
 
 
 (async () => {
   dataset = await fetch(
-    'data/data.json'
+    'https://cdn.jsdelivr.net/gh/highcharts/highcharts@88f2067/samples/data/nuclear-energy-production.json'
   ).then(response => response.json());
 
   chart = Highcharts.chart('donut_container', {
@@ -74,8 +72,8 @@ function getSubtitle() {
     series: [
       {
         type: 'pie',
-        name: input.innerText,
-        data: getData(input.innerText)[1]
+        name: startYear,
+        data: getData(startYear)[1]
       }
     ]
   });

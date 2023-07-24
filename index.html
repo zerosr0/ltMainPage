@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LT정밀</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <script defer src="main.js"></script>
@@ -14,12 +14,11 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/drilldown.js"></script>
-
 </head>
 
 <body>
   <div class="frame">
-    <div class="title">QMS MY JOB 현황</div>
+    <div class="title">MY JOB 현황</div>
     <div class="section-container">
       <section class="board">
         <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>미처리문서</span><a href="#">more</a></p>
@@ -28,34 +27,30 @@
             <caption class="hidden">미처리문서</caption>
             <tbody>
               <tr>
-                <td class="issue-type">오픈이슈</td>
-                <td class="issue-title"><a href="#">이슈제목</a></td>
-                <td class="current-status">문제점승인</td>
-                <td class="write-date">23.07.05 운영자</td>
+                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">이슈제목</a></td>
+                <td class="processing-status"><span class="current-status">문제점승인</span><a href="#">23.07.05 운영자</a></td>
               </tr>
               <tr>
-                <td class="issue-type">오픈이슈</td>
-                <td class="issue-title"><a href="#">이슈제목</a></td>
-                <td class="current-status">문제점승인</td>
-                <td class="write-date">23.07.04 운영자</td>
+                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">이슈제목</a></td>
+                <td class="processing-status"><span class="current-status">문제점승인</span><a href="#">23.07.04 운영자</a></td>
               </tr>
               <tr>
-                <td class="issue-type">오픈이슈</td>
-                <td class="issue-title"><a href="#">[테스트 프로젝트_8] 문서 설계 사...</a></td>
-                <td class="current-status">실적문서승인</td>
-                <td class="write-date">23.07.03 운영자</td>
+                <td class="issue-title"><span class="issue-type">개발품질</span><a href="#">[테스트 프로젝트_8] 문서 설계 사항 검토</a>
+                </td>
+                <td class="processing-status"><span class="current-status">실적문서승인</span><a href="#">23.07.03 운영자</a>
+                </td>
               </tr>
               <tr>
-                <td class="issue-type">오픈이슈</td>
-                <td class="issue-title"><a href="#">[테스트 프로젝트_7] 문서 설계 사...</a></td>
-                <td class="current-status">처리결과확인</td>
-                <td class="write-date">23.07.03 운영자</td>
+                <td class="issue-title"><span class="issue-type">오픈이슈</span><a href="#">[테스트 프로젝트_7] 문서 설계 사항 검토</a>
+                </td>
+                <td class="processing-status"><span class="current-status">처리결과확인</span><a href="#">23.07.03 운영자</a>
+                </td>
               </tr>
               <tr>
-                <td class="issue-type">오픈이슈</td>
-                <td class="issue-title"><a href="#">[테스트 프로젝트_6] 문서 설계 사...</a></td>
-                <td class="current-status">처리결과확인</td>
-                <td class="write-date">23.06.30 운영자</td>
+                <td class="issue-title"><span class="issue-type">개발품질</span><a href="#">[테스트 프로젝트_6] 문서 설계 사항 검토</a>
+                </td>
+                <td class="processing-status"><span class="current-status">실적문서승인</span><a href="#">23.07.03 운영자</a>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -63,7 +58,7 @@
       </section>
       <section class="icons">
         <p class="section-title"><img src="image/sectionTitle.png" alt=""><span>업무별 미처리문서</span></p>
-        <div class="wrapper">
+        <div class="wrapper icons-wrapper">
           <article><a href="#"><span>프로젝트</span>
               <div class="icons-value"><img src="image/프로젝트.png" alt=""><b>22</b></div>
             </a>
@@ -82,7 +77,7 @@
             </a>
           </article>
           <article class="emphasis"><a href="#"><span>참조문서</span>
-              <div class="icons-value"><img src="image/당월조치.png" alt=""><b>25</b></div>
+              <div class="icons-value"><img src="image/당월조치.png" alt=""><b>5</b></div>
             </a>
           </article>
           <article><a href="#"><span>과거품질</span>
@@ -177,7 +172,7 @@
             <div class="current-graph-title"><img src="image/graph.png" alt="">전체진행 현황</div>
             <div id="parent_container">
               <div id="donut_container"></div>
-              <span class="hidden" id="play-range">2022-2023</span>
+              <span id="play-range"></span>
             </div>
           </figure>
           <figure class="customers-current-graph">
@@ -188,32 +183,38 @@
               <div class="corp3"></div>
               <div class="corp4"></div>
               <div class="corp5"></div>
+              <div class="corp6"></div>
             </div>
             <div class="graph-desc">
               <div><span class="corp1"></span>
-                <p>LG화학</p>
-                <div>37%</div>
+                <p>LG 에너지솔루션</p>
+                <div>35%</div>
                 <b class="corp1-point">7건</b>
               </div>
               <div><span class="corp2"></span>
                 <p>LG전자</p>
-                <div>26%</div>
+                <div>25%</div>
                 <b class="corp2-point">5건</b>
               </div>
               <div><span class="corp3"></span>
-                <p>Valeo</p>
-                <div>21%</div>
+                <p>동희산업</p>
+                <div>20%</div>
                 <b class="corp3-point">4건</b>
               </div>
               <div><span class="corp4"></span>
-                <p>Subros</p>
-                <div>11%</div>
+                <p>Northvolt</p>
+                <div>10%</div>
                 <b class="corp4-point">2건</b>
               </div>
               <div><span class="corp5"></span>
-                <p>Hanon</p>
+                <p>5th corporation</p>
                 <div>5%</div>
                 <b class="corp5-point">1건</b>
+              </div>
+              <div><span class="corp6"></span>
+                <p>기타</p>
+                <div>5%</div>
+                <b class="corp6-point">1건</b>
               </div>
             </div>
           </figure>
