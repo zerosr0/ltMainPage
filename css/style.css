@@ -528,11 +528,26 @@ table {
   }
 }
 @media screen and (max-width: 1275px) {
-  section {
+  .section-container section {
     width: 100% !important;
   }
-  section.issue-graph {
+  .section-container section.issue-graph {
     margin-bottom: 100px;
+  }
+  .current-graph .wrapper {
+    height: 730px !important;
+  }
+  .current-graph .wrapper figure {
+    width: 100% !important;
+  }
+  .current-graph .wrapper .customers-current-graph .bar-graph {
+    margin: 35px 10px;
+  }
+  .current-graph .wrapper .customers-current-graph .graph-desc {
+    margin: 10px;
+  }
+  .issue-graph {
+    margin-top: 310px;
   }
 }
 

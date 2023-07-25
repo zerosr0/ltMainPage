@@ -1,18 +1,3 @@
-// //미처리문서 table에 title 길이 길면 ...으로 축약해서 보여주기
-// let issueTitle = document.querySelectorAll(".detail-title");
-
-// let result = [];
-// Array.from(issueTitle).map((el, idx) => {
-//   let titleText = el.innerHTML;
-//   if (titleText.length > 25) {
-//     titleText = titleText.slice(0, 25) + '...';
-//   }
-
-//   issueTitle[idx].innerText = titleText;
-// })
-
-
-
 //프로젝트 진행현황 중 전체 진행 현황
 let startYear = 1965,
   endYear = 2021,

@@ -559,10 +559,31 @@
 }
 
 @media screen and (max-width: 1275px) {
-	section {
-		width: 100% !important;
+	.section-container {
+		section {
+			width: 100% !important;
+		}
+		section.issue-graph {
+			margin-bottom: 100px;
+		}
 	}
-	section.issue-graph {
-		margin-bottom: 100px;
+	.current-graph {
+		.wrapper {
+			height: 730px !important;
+			figure {
+				width: 100% !important;
+			}
+			.customers-current-graph {
+				.bar-graph {
+					margin: 35px 10px;
+				}
+				.graph-desc {
+					margin: 10px;
+				}
+			}
+		}
+	}
+	.issue-graph {
+		margin-top: 310px;
 	}
 }
